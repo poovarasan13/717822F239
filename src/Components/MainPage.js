@@ -13,7 +13,7 @@ const MainPage = () => {
   });
   const apiFetch = async (selectedType) => {
     try {
-      const url = `http://localhost:9000/data`; 
+      const url = `http://localhost:9001/data/${selectedType}`; 
       const response = await axios.get(url); 
       const result = response.data.data; 
 
@@ -81,10 +81,10 @@ const MainPage = () => {
         {data && (
           <div style={{ marginTop: '20px' }}>
             <h2>API Response</h2>
-            <pre>{JSON.stringify(data,null,4)}</pre>
+            <pre>{JSON.stringify(data)}</pre>
 
             <h2>Details</h2>
-            <pre>{JSON.stringify(details,null,4)}</pre>
+            <pre>{JSON.stringify(details)}</pre>
           </div>
         )}
       </Container>
